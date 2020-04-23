@@ -1,0 +1,21 @@
+.editor {
+  padding-left: 10px;
+}
+
+::ng-deep {
+  .cm-s-material.CodeMirror {
+    background-color: #263238;
+    color: #eeffff;
+    height: 600px;
+  }
+}
+
+textarea {
+  resize: none;
+  width: 890px;
+  height: 200px;
+}
+
+.console {
+  padding-top: 20px;
+}

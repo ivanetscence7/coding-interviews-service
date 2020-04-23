@@ -1,0 +1,9 @@
+<div class="col-12" *ngIf="isInterview()">
+  <mat-card class="info-card">
+    <mat-card-header>
+      <mat-card-subtitle
+        >Interviewer: {{ interviewInfoDto.interviewerName }} Candidate: {{ interviewInfoDto.candidateName }}
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>

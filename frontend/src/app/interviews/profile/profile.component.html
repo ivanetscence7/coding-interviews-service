@@ -1,0 +1,30 @@
+<div class="col-md-12">
+  <div class="jumbotron">
+    <div class="card-body">
+      <h1 class="card-category text-gray">
+        {{ interviewerDto.firstName }}
+      </h1>
+      <h1 class="card-category text-gray">
+        {{ interviewerDto.lastName }}
+      </h1>
+      <h4 class="card-title">
+        {{ interviewerDto.email }}
+      </h4>
+      <ng-container *ngIf="getProfile() | async as profile">
+        <p class="card-description">Skype: {{ profile.skype }}</p>
+        <p class="card-description">Position: {{ profile.position }}</p>
+        <p class="card-description">Education: {{ profile.education }}</p>
+        <p class="card-description">Organization: {{ profile.organization }}</p>
+      </ng-container>
+    </div>
+    <div class="container  mt-5">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-end">
+          <button mat-fab matTooltip="Edit profile" (click)="openEditProfileDialog()" color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

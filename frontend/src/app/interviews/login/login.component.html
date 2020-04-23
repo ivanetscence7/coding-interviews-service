@@ -1,0 +1,42 @@
+<form [formGroup]="loginForm">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title d-flex justify-content-center">Login Form</h2>
+        <div class="card-text">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              formControlName="email"
+              placeholder="Enter email"
+              [(ngModel)]="loginDto.email"
+              required
+            />
+          </div>
+          <div class="form-group ">
+            <label for="exampleInputPassword1">
+              Password
+            </label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              formControlName="password"
+              placeholder="Password"
+              [(ngModel)]="loginDto.password"
+              required
+            />
+          </div>
+          <mat-card-actions class="d-flex justify-content-center w-100">
+            <button mat-button type="button" (click)="login(loginForm)" [disabled]="!loginForm.valid" color="primary">
+              Log In
+            </button>
+          </mat-card-actions>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

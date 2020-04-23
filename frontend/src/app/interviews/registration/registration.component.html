@@ -1,0 +1,162 @@
+<form [formGroup]="registrationForm">
+  <div class="container-fluid mt-5">
+    <div class="row align-content-center d-flex justify-content-center row ">
+      <div class="col-4">
+        <mat-card>
+          <mat-card-title class="d-flex justify-content-center">Registration</mat-card-title>
+          <mat-card-content>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <input
+                      type="text"
+                      matInput
+                      formControlName="firstName"
+                      [(ngModel)]="interviewerDto.firstName"
+                      placeholder="First Name"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.firstName">
+                    <div
+                      class="error-message"
+                      *ngIf="
+                        registrationForm.get('firstName').hasError(error.type) &&
+                        (registrationForm.get('firstName').dirty || registrationForm.get('firstName').touched)
+                      "
+                    >
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <input
+                      type="text"
+                      matInput
+                      formControlName="lastName"
+                      [(ngModel)]="interviewerDto.lastName"
+                      placeholder="Last Name"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.lastName">
+                    <div
+                      class="error-message"
+                      *ngIf="
+                        registrationForm.get('lastName').hasError(error.type) &&
+                        (registrationForm.get('lastName').dirty || registrationForm.get('lastName').touched)
+                      "
+                    >
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <input
+                      type="email"
+                      matInput
+                      formControlName="email"
+                      [(ngModel)]="interviewerDto.email"
+                      placeholder="Email"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.email">
+                    <div
+                      class="error-message"
+                      *ngIf="
+                        registrationForm.get('email').hasError(error.type) &&
+                        (registrationForm.get('email').dirty || registrationForm.get('email').touched)
+                      "
+                    >
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <input
+                      type="password"
+                      matInput
+                      formControlName="password"
+                      [(ngModel)]="interviewerDto.password"
+                      placeholder="Password"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.password">
+                    <div
+                      class="error-message"
+                      *ngIf="
+                        registrationForm.get('password').hasError(error.type) &&
+                        (registrationForm.get('password').dirty || registrationForm.get('password').touched)
+                      "
+                    >
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <input
+                      type="password"
+                      matInput
+                      formControlName="passwordConfirmation"
+                      [(ngModel)]="interviewerDto.passwordConfirmation"
+                      placeholder="Password Confirmation"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.passwordConfirmation">
+                    <div
+                      class="error-message"
+                      *ngIf="
+                        registrationForm.get('passwordConfirmation').hasError(error.type) &&
+                        (registrationForm.get('passwordConfirmation').dirty ||
+                          registrationForm.get('passwordConfirmation').touched)
+                      "
+                    >
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions class="d-flex justify-content-center w-100">
+            <button
+              mat-button
+              type="button"
+              (click)="submit(registrationForm)"
+              [disabled]="!registrationForm.valid"
+              color="primary"
+            >
+              Submit
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</form>

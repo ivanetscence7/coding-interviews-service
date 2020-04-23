@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Fill Profile</h1>
+<form #form="ngForm">
+  <div class="container-fluid mb-4 p-0">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <input type="text" matInput name="skype" [(ngModel)]="editProfileDto.skype" placeholder="Skype" required />
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <input
+            type="text"
+            matInput
+            name="position"
+            [(ngModel)]="editProfileDto.position"
+            placeholder="Position"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <input
+            type="text"
+            matInput
+            name="education"
+            [(ngModel)]="editProfileDto.education"
+            placeholder="Education"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <input
+            type="text"
+            matInput
+            name="organization"
+            [(ngModel)]="editProfileDto.organization"
+            placeholder="Organization"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <mat-card-actions class="d-flex justify-content-center w-100">
+        <button mat-button type="button" (click)="edit(form)" [disabled]="!form.valid" color="primary">
+          Save changes
+        </button>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <mat-dialog-actions *ngIf="isLoading">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-dialog-actions>
+      </mat-card-actions>
+    </div>
+  </div>
+</form>

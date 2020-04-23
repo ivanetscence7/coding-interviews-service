@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <fa-icon [icon]="faDragon"></fa-icon>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link" *ngIf="authService.isLoggedIn()" routerLink="/profile" routerLinkActive="active">Profile</a>
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          *ngIf="authService.isLoggedIn()"
+          routerLink="/coding-interviews/list"
+          routerLinkActive="active"
+          >All Candidates</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" *ngIf="!authService.isLoggedIn()" routerLink="/registration" routerLinkActive="active"
+          >Register</a
+        >
+      </li>
+
+      <li>
+        <a class="nav-link" *ngIf="authService.isLoggedIn()" routerLink="/problems" routerLinkActive="active"
+          >Problems</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!authService.isLoggedIn()" routerLink="/login" routerLinkActive="active">
+          Login
+        </a>
+      </li>
+
+      <li>
+        <a class="nav-link" style="cursor:pointer" *ngIf="authService.isLoggedIn()" (click)="authService.logout()">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

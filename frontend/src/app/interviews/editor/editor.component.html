@@ -1,0 +1,24 @@
+<section>
+  <div class="button-row">
+    <button mat-button color="warn" (click)="leaveEditorRoom()">Leave Room</button>
+    <button mat-button color="primary" (click)="executeCode()">Execute Code</button>
+  </div>
+</section>
+<div class="row editor">
+  <div class="col-lg-6">
+    <ngx-codemirror
+      [(ngModel)]="text"
+      [options]="options"
+      (keyup)="editText()"
+      (ngModelChange)="getEditorContent($event)"
+    ></ngx-codemirror>
+  </div>
+  <div class="col-lg-6">
+    <app-interview-problem></app-interview-problem>
+  </div>
+  <div class="col-lg-6 console">
+    <label>
+      <textarea [(ngModel)]="areaOutput"></textarea>
+    </label>
+  </div>
+</div>

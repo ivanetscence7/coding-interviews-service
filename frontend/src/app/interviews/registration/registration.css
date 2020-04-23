@@ -1,0 +1,17 @@
+p {
+  font-family: Lato, serif;
+}
+
+.error-message {
+  color: red;
+}
+
+.container {
+  padding-top: 3rem;
+  width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
